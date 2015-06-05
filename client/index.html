@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>/index</title>
+    <!--   ^^ see what I did there? -->
+  </head>
+  <body>
+
+    <div data-js="webapp">
+      <h1>Plain ole html</h1>
+      <webapp-form></webapp-form>
+    </div>
+    <div data-js="another_page"></div>
+    <script src="lib/jquery/dist/jquery.js"></script>
+    <script src="src/headers.js"></script>
+    <script>
+      var $el = $('[data-js="another_page"]');
+
+      function makeWidget(){
+        var widget = {};
+        widget.body = $el;
+        return widget;
+      }
+    </script>
+  </body>
+</html>

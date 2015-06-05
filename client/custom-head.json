@@ -1,0 +1,7 @@
+{
+  "script": [
+    "lib/angular/angular.js",
+    "src/webapp/form.directive.js",
+    "src/webapp/main.js"
+  ]
+}

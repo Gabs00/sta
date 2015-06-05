@@ -1,0 +1,22 @@
+<div id="webapp-form">
+  <form name="webapp-form" ng-submit="submitForm()">
+    <input type="text" ng-model="webapp.search" placeholder="Enter search here" required/>
+    <div>
+      In group? <input type="checkbox" ng-model="webapp.ingroup" checked="checked">
+    </div>
+    <input type="submit" value="submit"/>
+  </form>
+  <div ng-show="submissions.length">
+    <div ng-repeat="item in submissions">
+      <div ng-if="$index < showNum">
+        <span class="some-item">
+          Term: {{ item.search}} |
+          Date: {{item.date | date:format:'medium'}} |
+          in-group:{{item.ingroup === true}}
+        </span>
+      </div>
+    </div>
+    <button ng-click="showing(showNum + 5)">More</button>
+    <button ng-click="showing(showNum - 5)">Less</button>
+  </div>
+</div>
